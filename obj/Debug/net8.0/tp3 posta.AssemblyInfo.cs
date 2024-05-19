@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tp3 posta")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbb8d141efaae2a3b8b3419c1c22adb030f663fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bca661457b677b9fb7606c7134b7e944c7a90231")]
 [assembly: System.Reflection.AssemblyProductAttribute("tp3 posta")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tp3 posta")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

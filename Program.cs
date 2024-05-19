@@ -20,7 +20,6 @@ class program
             int suma2 = 0;
             int suma3 = 0;
             int suma4 = 0;
-            int encontrarDni = 0;
 
             Console.WriteLine("1. Nueva inscripción");
             Console.WriteLine("2. Obtener estadísticas del evento");
@@ -43,8 +42,7 @@ class program
                         MostrarEstadisticas(cantInscripcion, cantInscripcionDia1, cantInscripcionDia2, cantInscripcionDia3, cantInscripcionFullPass, total1, total2, total3, total4, suma1, suma2, suma3, suma4);
                         break;
                     case TRES:
-                        encontrarDni = BuscarDNI(encontrarDni);
-                        /*int encontradoDni = ticketera.BuscarCliente(DNI);*/
+                        BuscarDNI();
                         break;
                     case CUATRO:
 
@@ -81,14 +79,12 @@ class program
                         cantInscripcionFullPass++;
                         suma4 = cantInscripcionFullPass * 100000;
                     }
-                    total1 = cantInscripcionDia1 * 100 / cantInscripcion;
-                    total2 = cantInscripcionDia1 * 100 / cantInscripcion;
-                    total3 = cantInscripcionDia1 * 100 / cantInscripcion;
-                    total4 = cantInscripcionDia1 * 100 / cantInscripcion;
-
+                    total1 = (cantInscripcionDia1*100)/cantInscripcion;
+                    total2 = (cantInscripcionDia1*100)/cantInscripcion;
+                    total3 = (cantInscripcionDia1*100)/cantInscripcion;
+                    total4 = (cantInscripcionDia1*100)/cantInscripcion;
                 }
             }
-
         }
         static public Cliente Inscripcion(Cliente cargarpersona)
         {
@@ -188,14 +184,10 @@ class program
             }
             else {Console.WriteLine("No se inscribió nadie");}
         }
-        static int BuscarDNI(int encontrarDni)
+        static void BuscarDNI()
         {
-            Console.WriteLine("Ingrese el DNI que quiere buscar");
-            encontrarDni = int.Parse(Console.ReadLine());
-            return encontrarDni;
+            int buscar;
+            bool funciona;
+            string leer = MiConsola.Leer("Ingrese el DNI que quiere buscar");
         }
-        /*static void MostrarDniEncontrado(bool seEncontro, List<Cliente>dicTicket, int encontrarDni)
-        {
-
-        }*/
     }

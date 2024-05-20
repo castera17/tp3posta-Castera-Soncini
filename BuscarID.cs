@@ -1,10 +1,10 @@
 public static class BuscarID
 {
-    public static string LeerDNI(string mensaje)
+    public static string LeerDNI(string texto)
         {
             string leer;
-            Console.WriteLine(mensaje);
-            leer = (Console.ReadLine());
+            Console.WriteLine(texto);
+            leer = Console.ReadLine();
             return leer;
         }
     public static int TotalAbono(int tipoEntrada, int cantidad)

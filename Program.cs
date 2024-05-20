@@ -208,7 +208,7 @@ class program
             int buscar, tipoEntrada, cantidad;
             do
             {
-                leer = BuscarID.LeerDNI("Ingrese el ID");
+                leer = BuscarID.LeerDNI("Ingrese el ID para cambiar");
                 funciona = int.TryParse(leer, out buscar);
             }while(funciona == false || buscar < 1 || buscar > ticketera.DevolverUltimoID());
             do
@@ -221,7 +221,7 @@ class program
                 leer=BuscarID.LeerDNI("Ingrese la cantidad");
                 funciona = int.TryParse(leer, out cantidad);
             }while(funciona == false || cantidad < 1);
-            sePudo=ticketera.CambiarEntrada(buscar, tipoEntrada, cantidad);
+            sePudo = ticketera.CambiarEntrada(buscar, tipoEntrada, cantidad);
             Console.WriteLine("Se pudo cambiar la entrada");
         }
     }

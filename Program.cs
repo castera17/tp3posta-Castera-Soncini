@@ -45,7 +45,7 @@ class program
                         BuscarDNI();
                         break;
                     case CUATRO:
-
+                        CambiarEntrada();
                         break;
                     case CINCO:
                         Console.WriteLine("Saliste");
@@ -188,6 +188,41 @@ class program
         {
             int buscar;
             bool funciona;
-            string leer = MiConsola.Leer("Ingrese el DNI que quiere buscar");
+            string leer = BuscarID.LeerDNI("Ingresar ID");
+            funciona = int.TryParse(leer, out buscar);
+            if (funciona || buscar > 0)
+            {
+            Cliente objcliente = ticketera.BuscarCliente(buscar);
+            Console.WriteLine("El nombre es: " + objcliente.Nombre);
+            Console.WriteLine("El apellido es: " + objcliente.Apellido);
+            Console.WriteLine("El DNI es: " + objcliente.DNI);
+            Console.WriteLine("El tipo de entrada es: " + objcliente.TipoEntrada);
+            Console.WriteLine("La cantidad que compró fue de: " + objcliente.Cantidad);
+            }
+            else{Console.WriteLine("No existe este ID");}
+        }
+        static void CambiarEntrada()
+        {
+            bool sePudo, funciona;
+            string leer;
+            int buscar, tipoEntrada, cantidad;
+            do
+            {
+                leer = BuscarID.LeerDNI("Ingrese el ID");
+                funciona = int.TryParse(leer, out buscar);
+            }while(funciona == false || buscar < 1 || buscar > ticketera.DevolverUltimoID());
+            do
+            {
+                leer=BuscarID.LeerDNI("Ingrese el Tipo de Entrada");
+                funciona = int.TryParse(leer, out tipoEntrada);
+            }while(funciona == false || tipoEntrada <1 || tipoEntrada > 4);
+            do
+            {
+                leer=BuscarID.LeerDNI("Ingrese la cantidad");
+                funciona = int.TryParse(leer, out cantidad);
+            }while(funciona == false || cantidad < 1);
+            sePudo=ticketera.CambiarEntrada(buscar, tipoEntrada, cantidad);
+            Console.WriteLine("Se pudo cambiar la entrada");
         }
     }
+    
